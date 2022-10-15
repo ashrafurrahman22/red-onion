@@ -1,0 +1,8 @@
+#banDiv {
+    background-image: url('../assets/bannerbackground.png');
+    background-position-x: center;
+    padding: 120px;
+    /* zoom: 170%; */
+    background-size: cover;
+    padding: 10px;
+}
