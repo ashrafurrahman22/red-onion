@@ -14,14 +14,17 @@ const Banner = () => {
                 <img src={bg} alt="" />
             </div>
 
-            <div className='relative lg:top-[-340px] top-[-120px]'>
+            {/* <div className='relative lg:top-[-340px] top-[-120px]'> */}
+            <div className='absolute lg:top-[230px] left-[360px]'>
             <h2 className='lg:text-4xl font-semibold text-center'>Best Food Waiting for your Belly</h2>
             <div className='text-center py-6'>
             {/* <form onSubmit={handleSearch}>
             <input className='border border-black lg:py-2 lg:px-10 rounded-full mr-2' type="text" placeholder='Search' name='search' />
             <input className='btn bg-red-600 lg:w-28  text-white lg:font-medium normal-case rounded-full' type="submit" value="Search" />
             </form> */}
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form style={{
+        fontFamily:"poppins"
+      }} onSubmit={handleSubmit(onSubmit)}>
       <input className='border border-black lg:py-2 lg:px-10 rounded-full mr-2' placeholder='Search' {...register("search")} required/>
       {errors.exampleRequired && <span>This field is required</span>}
       <input className='btn bg-red-600 lg:w-28  text-white lg:font-medium normal-case rounded-full' type="submit" />

@@ -10,10 +10,12 @@ import notify from '../../assets/icons/Group 1133.png'
 
 const Review = () => {
     return (
-        <div className='px-14'>
+        <div style={{
+            fontFamily:"poppins"
+          }} className='px-14'>
 
             <div className='py-4'>
-            <h2 className='text-2xl font-medium'>Why you choose us?</h2>
+            <h2 className='text-2xl font-semibold'>Why you choose us?</h2>
             <p className='py-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Commodi libero impedit voluptatibus eius?</p>
             </div>
 
@@ -27,9 +29,11 @@ const Review = () => {
                     <img className='w-10' src={truck1} alt="" />
                     </div>
                     <div className='w-56'>
-                        <h2 className='text-xl font-medium'>Fast Delivery</h2>
+                        <h2 className='text-md font-semibold'>Fast Delivery</h2>
                         <p className='text-justify text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut suscipit dignissimos odit.</p>
-                        <div className='flex my-2 items-center btn bg-red-600 border-none font-light rounded-full w-44'>
+                        <div style={{
+        fontFamily:"poppins"
+      }} className='flex my-2 items-center btn bg-red-600 border-none normal-case font-light rounded-full w-44'>
                             <p className='pr-2'>see more</p>
                             <FontAwesomeIcon icon={faArrowCircleRight}/>
                         </div>
@@ -45,9 +49,11 @@ const Review = () => {
                     <img className='w-10' src={notify} alt="" />
                     </div>
                     <div className='w-56'>
-                        <h2 className='text-xl font-medium'>A Good Auto Responder</h2>
+                        <h2 className='text-md font-semibold'>A Good Auto Responder</h2>
                         <p className='text-justify text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut suscipit dignissimos odit.</p>
-                        <div className='flex my-2 items-center btn bg-red-600 border-none font-light rounded-full w-44'>
+                        <div style={{
+        fontFamily:"poppins"
+      }} className='flex my-2 items-center btn bg-red-600 border-none font-light normal-case rounded-full w-44'>
                             <p className='pr-2'>see more</p>
                             <FontAwesomeIcon icon={faArrowCircleRight}/>
                         </div>
@@ -63,9 +69,11 @@ const Review = () => {
                     <img className='w-10' src={truck} alt="" />
                     </div>
                     <div className='w-56'>
-                        <h2 className='text-xl font-medium'>Home Delivery</h2>
+                        <h2 className='text-md font-semibold'>Home Delivery</h2>
                         <p className='text-justify text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut suscipit dignissimos odit.</p>
-                        <div className='flex my-2 items-center btn bg-red-600 border-none font-light rounded-full w-44'>
+                        <div style={{
+        fontFamily:"poppins"
+      }} className='flex my-2 items-center btn bg-red-600 border-none font-light normal-case rounded-full w-44'>
                             <p className='pr-2'>see more</p>
                             <FontAwesomeIcon icon={faArrowCircleRight}/>
                         </div>
