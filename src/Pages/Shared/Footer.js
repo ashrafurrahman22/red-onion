@@ -33,7 +33,7 @@ const Footer = () => {
     <a className="link link-hover">Cookie policy</a>
   </div>
 </footer>
-        <div className='flex justify-center pb-10'>
+        <div className='flex justify-center pb-6'>
             <p className='text-red-600'>Copyright©{year} Online Food</p>
         </div>
         </div>
