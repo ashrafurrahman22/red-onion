@@ -22,11 +22,11 @@ const Signup = () => {
         <form style={{
         fontFamily:"poppins"
       }} className='flex flex-col justify-center items-center' onSubmit={handleSubmit(onSubmit)}>
-      <input className='border w-72 border-black lg:py-2 lg:px-10 rounded-xl my-2 mr-2' placeholder='Name' {...register("name")} required/>
-      <input className='border w-72 border-black lg:py-2 lg:px-10 rounded-xl my-2 mr-2' placeholder='Email' type="email" {...register("email")} required/>
-      <input className='border w-72 my-2 border-black lg:py-2 lg:px-10 rounded-xl mr-2' placeholder='Password' type='password' {...register("search")} required/>
+      <input className='border w-72 border-black lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Name' {...register("name")} required/>
+      <input className='border w-72 border-black lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Email' type="email" {...register("email")} required/>
+      <input className='border w-72 my-2 border-black lg:py-2 lg:px-10 rounded mr-2' placeholder='Password' type='password' {...register("search")} required/>
       {errors.exampleRequired && <span>This field is required</span>}
-      <input  className='btn bg-red-600 my-2 lg:w-72  text-white lg:font-medium normal-case rounded-xl' type="submit" value="Sign up" />
+      <input  className='btn bg-red-600 my-2 lg:w-72  text-white lg:font-medium normal-case rounded' type="submit" value="Sign up" />
     </form>
         </div>
        
