@@ -32,16 +32,14 @@ const Food = () => {
 
     return (
         <div style={{fontFamily:"poppins"}} className='py-4'>
-            <div className='flex justify-center pt-8'>
-                <button style={{
-                    fontFamily:"poppins"
-                }} onClick={()=>handleClick("breakfast")} className='btn mx-4 font-medium rounded-full bg-red-600 normal-case px-4'>Breakfast</button>
-                <button style={{
-                    fontFamily:"poppins"
-                }} onClick={()=>handleClick("launch")} className='btn mx-4 font-medium rounded-full bg-red-600 normal-case px-4'>Launch</button>
-                <button style={{
-                    fontFamily:"poppins"
-                }} onClick={()=>handleClick("dinner")} className='btn mx-4 font-medium rounded-full bg-red-600 normal-case px-4'>Dinner</button>
+            <div style={{
+                    fontFamily:"poppins",
+                    fontSize:"18px"
+                }}
+             className='flex justify-center pt-8 gap-10'>
+                <button  onClick={()=>handleClick("breakfast")} className={`${btn==="breakfast" ? "border-b-2 border-red-500" : "border-none"}`}>Breakfast</button>
+                <button onClick={()=>handleClick("launch")} className={`${btn==="launch" ? "border-b-2 border-red-500" : "border-none"}`}>Launch</button>
+                <button onClick={()=>handleClick("dinner")} className={`${btn==="dinner" ? "border-b-2 border-red-500" : "border-none"}`}>Dinner</button>
             </div>
 
             <div className='grid grid-cols-3 px-14 gap-10 py-10'>
