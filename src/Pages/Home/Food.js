@@ -23,10 +23,10 @@ const Food = () => {
 
 
     const [btn, setBtn] = useState("breakfast");
-    console.log(btn)
+    // console.log(btn)
 
     const handleClick = (result) =>{
-        console.log(result)
+        // console.log(result)
         setBtn(result)
     }
 
