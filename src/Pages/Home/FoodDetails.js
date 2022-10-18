@@ -1,12 +1,22 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { click } from "@testing-library/user-event/dist/click";
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useFoodDetails from "../../hooks/useFoodDetails";
+import useOrders from "../../hooks/useOrders";
 
 const FoodDetails = () => {
+
+  const [isClick, setClick] = useState(false);
+
+  const [orders] = useOrders();
+  // console.log(orders)
+  
+  
+
   const { foodId } = useParams();
   const [data, setData] = useFoodDetails(foodId);
 
@@ -28,15 +38,19 @@ const FoodDetails = () => {
 }
   }
 
-  const handleSubmit = (data) => {
-    console.log(data)
+  const exists = orders.filter(o=>o?.name===data?.name)
+  console.log(exists)
+
+  const handleSubmit = (data, clicked) => {
+    console.log(data, clicked)
+    setClick(clicked)
 
     // axios.post('http://localhost:5000/orders', data)
     // .then(response =>{
     //   const {data} = response;
     //   console.log(response);
     //     if(data.insertedId){
-    //     toast.success('notes added');
+    //     toast.success('Successfully Added to Cart');
     //     }
     // });
   };
@@ -66,9 +80,17 @@ const FoodDetails = () => {
             </div>
           </div>
 
-          <button onClick={()=>handleSubmit(data)} className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28">
-            <FontAwesomeIcon icon={faCartShopping} /> <span>Add</span>
-          </button>
+          <div>
+            
+            {
+              isClick===false ? <div>
+                <button onClick={()=>handleSubmit(data,true )} className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28"><FontAwesomeIcon icon={faCartShopping} /> <span>
+              Add
+            </span></button>
+              </div> : <button className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28" disabled>Added</button>
+            }
+            
+          </div> 
         </div>
         <div className="w-2/3">
           <img src={img} alt="" />
