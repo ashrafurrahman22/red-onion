@@ -8,6 +8,9 @@ import PageNotFound from './Pages/Shared/PageNotFound';
 import Signup from './Pages/Login/Signup';
 import Login from './Pages/Login/Login';
 import FoodDetails from './Pages/Home/FoodDetails';
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   return (
@@ -24,7 +27,7 @@ const App = () => {
       </Routes>
 
         <Footer/>
-
+        <ToastContainer />
     </div>
   );
 };
