@@ -1,20 +1,20 @@
 [
     {
-        "_id" : "1",
+        "serial" : "1",
         "name" : "Fast Delivery",
         "title" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut suscipit dignissimos odit.",
         "img" : "https://i.ibb.co/yhhTm9k/adult-blur-blurred-background-687824.png",
         "icon" : "https://i.ibb.co/VDddgGm/Group-204.png"
     },
     {
-        "_id" : "2",
+        "serial" : "2",
         "name" : "A Good Auto Responder",
         "title" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut suscipit dignissimos odit.",
         "img" : "https://i.ibb.co/yRk38jD/chef-cook-food-33614.png",
         "icon" : "https://i.ibb.co/n79zYB1/Group-1133.png"
     },
     {
-        "_id" : "3",
+        "serial" : "3",
         "name" : "Home Delivery",
         "title" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut suscipit dignissimos odit.",
         "img" : "https://i.ibb.co/5nhgrNr/architecture-building-city-2047397.png",

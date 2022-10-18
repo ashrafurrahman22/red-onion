@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import useFoods from '../../hooks/useFoods';
 import SingleFood from './SingleFood';
 
 const Food = () => {
 
-    const [foods, setFoods] = useState([]);
-
-    useEffect(()=>{
-        fetch("food.json")
-        .then(res => res.json())
-        .then(data => setFoods(data))
-    },[])
+    const [foods] = useFoods();
 
     const breakfast = foods.filter(food=>food?.type === "breakfast")
-    // console.log(breakfast)
 
     const launch = foods.filter(food=>food?.type === "launch")
-    // console.log(launch)
 
-    // dinner
     const dinner = foods.filter(food=>food?.type === "dinner")
-    // console.log(dinner)
 
 
     const [btn, setBtn] = useState("breakfast");
-    // console.log(btn)
 
     const handleClick = (result) =>{
-        // console.log(result)
         setBtn(result)
     }
 

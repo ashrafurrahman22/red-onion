@@ -7,6 +7,7 @@ import Footer from './Pages/Shared/Footer';
 import PageNotFound from './Pages/Shared/PageNotFound';
 import Signup from './Pages/Login/Signup';
 import Login from './Pages/Login/Login';
+import FoodDetails from './Pages/Home/FoodDetails';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/food/:foodId' element={<FoodDetails/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='*' element={<PageNotFound/>}></Route>
