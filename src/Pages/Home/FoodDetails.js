@@ -38,8 +38,8 @@ const FoodDetails = () => {
 }
   }
 
-  const exists = orders.filter(o=>o?.name===data?.name)
-  console.log(exists)
+  // const exists = orders.map(o=>o?.name===data?.name)
+  // console.log(exists)
 
   const handleSubmit = (data, clicked) => {
     console.log(data, clicked)
@@ -89,6 +89,7 @@ const FoodDetails = () => {
             </span></button>
               </div> : <button className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28" disabled>Added</button>
             }
+            
             
           </div> 
         </div>

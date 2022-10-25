@@ -8,6 +8,11 @@ const Home = () => {
         <div>
             <Banner/>
             <Food/>
+            <div style={{
+                fontFamily:"poppins"
+            }} className='text-center py-3'>
+                <button className='btn font-medium normal-case bg-gray-600 px-20'>Checkout Your Food</button>
+            </div>
             <Review/>
         </div>
     );

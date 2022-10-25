@@ -4,10 +4,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo2.png'
 import useOrders from '../../hooks/useOrders';
+import { signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Navbar = () => {
 
+  const [user] = useAuthState(auth);
+
     const [orders] = useOrders();
+    const logout = () => {
+      signOut(auth);
+  };
 
     return (
         <div style={{
@@ -59,11 +67,38 @@ const Navbar = () => {
       </div>
     </div>
       </Link></li>
-      <li><Link to='/login'>Login</Link></li>
+      <li>
+      {user ? <div className="dropdown dropdown-end">
+      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img src="https://placeimg.com/80/80/people" />
+        </div>
+      </label>
+      <ul tabIndex={0} className="menu menu-compact  dropdown-content mt-3 p-2 absolute top-14 shadow bg-base-100 rounded-box w-52">
+        <li>
+          <a className="justify-between">
+            Profile
+            <span className="badge">New</span>
+          </a>
+        </li>
+        <li><a>Settings</a></li>
+        <li><button onClick={logout}>Logout</button></li>
+      </ul>
+    </div> :
+                <>
+                <Link to='/login'>Login</Link>
+                <Link to='/signup'>
+                  <button
+                   className='btn bg-red-600 w-28 text-white font-extralight normal-case rounded-full'>Sign up</button>
+                  </Link>
+                </> }
+        
+        {/* <Link to='/login'>Login</Link></li>
       <li ><Link to='/signup'>
         <button
          className='btn bg-red-600 w-28 text-white font-extralight normal-case rounded-full'>Sign up</button>
-        </Link></li>
+        </Link> */}
+        </li>
     </ul>
   </div>
 </div>
