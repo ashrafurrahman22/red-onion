@@ -1,8 +1,9 @@
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faL } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { click } from "@testing-library/user-event/dist/click";
 import axios from "axios";
 import React, { useState } from "react";
+import { set } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useFoodDetails from "../../hooks/useFoodDetails";
@@ -18,7 +19,7 @@ const FoodDetails = () => {
   
 
   const { foodId } = useParams();
-  const [data, setData] = useFoodDetails(foodId);
+  const [data] = useFoodDetails(foodId);
 
   const { name, img, price } = data;
 
@@ -38,23 +39,31 @@ const FoodDetails = () => {
 }
   }
 
-  // const exists = orders.map(o=>o?.name===data?.name)
+
   // console.log(exists)
 
-  const handleSubmit = (data, clicked) => {
-    console.log(data, clicked)
-    setClick(clicked)
+  const handleSubmit = (data) => {
+    // console.log(data)
+    // setClick(clicked)
 
-    // axios.post('http://localhost:5000/orders', data)
-    // .then(response =>{
-    //   const {data} = response;
-    //   console.log(response);
-    //     if(data.insertedId){
-    //     toast.success('Successfully Added to Cart');
-    //     }
-    // });
+    axios.post('http://localhost:5000/orders', data)
+    .then(response =>{
+      const {data} = response;
+      console.log(response);
+        if(data.insertedId){
+        toast.success('Successfully Added to Cart');
+        }
+    });
   };
 
+  // eslint-disable-next-line array-callback-return
+  const exists = orders.filter(order=>{
+    if(order.name===data.name){
+      return true;
+    }
+  })
+
+  console.log(exists)
 
   return (
     <div
@@ -83,12 +92,19 @@ const FoodDetails = () => {
           <div>
             
             {
+              exists.length<1 ? <div>
+                <button onClick={()=>handleSubmit(data )} className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28"><FontAwesomeIcon icon={faCartShopping} /> <span>
+              Add
+            </span></button>
+              </div> : <button className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28" disabled>Added</button>
+            }
+            {/* {
               isClick===false ? <div>
                 <button onClick={()=>handleSubmit(data,true )} className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28"><FontAwesomeIcon icon={faCartShopping} /> <span>
               Add
             </span></button>
               </div> : <button className="btn bg-red-600 text-white rounded-full normal-case font-medium gap-3 w-28" disabled>Added</button>
-            }
+            } */}
             
             
           </div> 
