@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../Styles/Banner.css'
 import bg from  '../../assets/bannerbackground2.png';
 import { useForm } from "react-hook-form";
+import useFoods from '../../hooks/useFoods';
+import { useNavigate } from 'react-router-dom';
+import SingleFood from './SingleFood';
 
 const Banner = () => {
 
+    const[foods] = useFoods();
+    const [searchTitle, setSearchTitle] = useState("")
+
+    const navigate = useNavigate();
+
+   const navigateToFoodDetails = id =>{
+       navigate(`/food/${id}`);
+   }
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => {
+    setSearchTitle(data);
+    // console.log(data)
+};
 
     return (
         <div>
@@ -31,7 +46,35 @@ const Banner = () => {
     </form>
             </div>
             </div>
-            
+            <div className='grid grid-cols-3 px-14 gap-10 py-4'>
+                {
+                    // eslint-disable-next-line array-callback-return
+                    foods.filter((value) => {
+                        // console.log(value)
+                        if(searchTitle===""){
+                          return "";
+                        }
+                        else if(
+                          value.name.toLowerCase().includes(searchTitle.search.toLowerCase())
+                        )
+                        return value;
+                      })
+                      .map(food=> 
+                        <SingleFood
+                        key={food._id}
+                        food={food}
+                        ></SingleFood>
+        //               <div>
+        //                <div onClick={() => navigateToFoodDetails(food._id)} className='card card-body bg-base-200 shadow-md w-96 text-center'>
+        //     <img className='p-4' src={food.img} alt="" />
+        //     <h2 className='font-semibold'>{food.name}</h2>
+        //     <h2 className='font-light text-sm'>{food.title}</h2>
+        //     <h2 className='font-semibold'>Price: ${food.price}</h2>
+        // </div>
+        //               </div>
+                       )
+                }
+            </div>
         </div>
     );
 };
