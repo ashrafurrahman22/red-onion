@@ -1,6 +1,6 @@
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo2.png'
 import useOrders from '../../hooks/useOrders';
@@ -13,6 +13,13 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
 
     const [orders] = useOrders();
+
+    let sum = 0;
+    orders.forEach(element =>{
+      sum += parseFloat(element.price)
+    } )
+
+
     const logout = () => {
       signOut(auth);
   };
@@ -59,7 +66,7 @@ const Navbar = () => {
       <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div className="card-body">
           <span className="font-bold text-lg">{orders.length} Items</span>
-          <span className="text-info">Subtotal: $999</span>
+          <span className="text-info">Subtotal: ${sum}</span>
           <div className="card-actions">
             <button className="btn btn-primary btn-block">View cart</button>
           </div>

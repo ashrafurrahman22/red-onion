@@ -4,6 +4,9 @@ import Food from './Food';
 import Review from './Review';
 
 const Home = () => {
+
+    
+
     return (
         <div>
             <Banner/>
