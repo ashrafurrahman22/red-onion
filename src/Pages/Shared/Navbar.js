@@ -82,13 +82,13 @@ const Navbar = () => {
         </div>
       </label>
       <ul tabIndex={0} className="menu menu-compact  dropdown-content mt-3 p-2 absolute top-14 shadow bg-base-100 rounded-box w-52">
-        <li>
+        {/* <li>
           <a className="justify-between">
             Profile
             <span className="badge">New</span>
           </a>
-        </li>
-        <li><a>Settings</a></li>
+        </li> */}
+        <li><Link to='/cart'>Cart</Link></li>
         <li><button onClick={logout}>Logout</button></li>
       </ul>
     </div> :
@@ -99,12 +99,6 @@ const Navbar = () => {
                    className='btn bg-red-600 w-28 text-white font-extralight normal-case rounded-full'>Sign up</button>
                   </Link>
                 </> }
-        
-        {/* <Link to='/login'>Login</Link></li>
-      <li ><Link to='/signup'>
-        <button
-         className='btn bg-red-600 w-28 text-white font-extralight normal-case rounded-full'>Sign up</button>
-        </Link> */}
         </li>
     </ul>
   </div>
