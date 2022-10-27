@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login';
 import FoodDetails from './Pages/Home/FoodDetails';
 import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Cart from './Pages/Cart/Cart';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/food/:foodId' element={<FoodDetails/>}></Route>
+        <Route path='/cart' element={<Cart></Cart>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='*' element={<PageNotFound/>}></Route>

@@ -67,9 +67,9 @@ const Navbar = () => {
         <div className="card-body">
           <span className="font-bold text-lg">{orders.length} Items</span>
           <span className="text-info">Subtotal: ${sum}</span>
-          <div className="card-actions">
+          {/* <div className="card-actions">
             <button className="btn btn-primary btn-block">View cart</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
