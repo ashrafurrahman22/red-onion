@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import Details from './Details';
 import Total from './Total';
 
@@ -9,10 +11,21 @@ const Cart = () => {
         register,
         formState: { errors },
         handleSubmit,
+        reset,
       } = useForm();
 
-      const onSubmit = (data) => {
+      const onSubmit = data => {
         console.log(data)
+    
+        axios.post('http://localhost:5000/confirmorders', data)
+        .then(response =>{
+          const {data} = response;
+          console.log(response);
+            if(data.insertedId){
+            reset();
+            toast.success('Thanks for your Order.');
+            }
+        });
       };
 
     return (
@@ -23,10 +36,17 @@ const Cart = () => {
         <form style={{
         fontFamily:"poppins"
       }} className='flex flex-col justify-center items-center' onSubmit={handleSubmit(onSubmit)}>
-      <input className='w-full lg:py-2 lg:px-10 rounded my-2 mr-2' defaultValue="Deliver To Door" disabled {...register("condition")} required/>
+        {/* <label for="cars">Choose a car:</label> */}
+  <select className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' name="cars" id="cars" {...register('condition')}>
+    <option value="Deliver To Door">Deliver To Door</option>
+    <option value="Cash On Delivery">Cash On Delivery</option>
+    {/* <option value="opel">Opel</option>
+    <option value="audi">Audi</option> */}
+  </select>
+      {/* <input className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' value='Deliver To Door' {...register("condition")} required/> */}
       <input className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Address' type="text" {...register("address")} required/>
       <input className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Name' type="text" {...register("name")} required/>
-      <input className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Email' type="email" {...register("name")} required/>
+      <input className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Email' type="email" {...register("email")} required/>
       <input className='w-full bg-base-200 lg:py-2 lg:px-10 rounded my-2 mr-2' placeholder='Contact' type="number" {...register("contact")} required/>
       
       {errors.exampleRequired && <span>This field is required</span>}
