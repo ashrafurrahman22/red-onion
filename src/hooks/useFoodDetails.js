@@ -4,7 +4,7 @@ const useFoodDetails = foodId =>{
     const [data, setData] = useState({});
 
     useEffect(()=>{
-        const url = `http://localhost:5000/foods/${foodId}`
+        const url = `https://tranquil-gorge-14030.herokuapp.com/foods/${foodId}`
         fetch(url)
         .then(res => res.json())
         .then(result => setData(result))

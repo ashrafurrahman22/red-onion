@@ -9,7 +9,7 @@ const SingleCartDetails = ({order}) => {
     // const handleDelete = id =>{
     //   const procede = window.confirm('Are You Sure?');
     //   if(procede){
-    //     const url = `http://localhost:5000/orders/${id}`
+    //     const url = `https://tranquil-gorge-14030.herokuapp.com/carts/${id}`
     //     fetch(url, {
     //       method : "DELETE"
     //     })

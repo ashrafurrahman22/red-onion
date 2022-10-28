@@ -17,7 +17,7 @@ const Cart = () => {
       const onSubmit = data => {
         console.log(data)
     
-        axios.post('http://localhost:5000/confirmorders', data)
+        axios.post('https://tranquil-gorge-14030.herokuapp.com/confirmorders', data)
         .then(response =>{
           const {data} = response;
           console.log(response);

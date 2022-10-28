@@ -46,7 +46,7 @@ const FoodDetails = () => {
     // console.log(data)
     // setClick(clicked)
 
-    axios.post('http://localhost:5000/orders', data)
+    axios.post('https://tranquil-gorge-14030.herokuapp.com/carts', data)
     .then(response =>{
       const {data} = response;
       console.log(response);
