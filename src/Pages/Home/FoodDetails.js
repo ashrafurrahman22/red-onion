@@ -72,7 +72,7 @@ const FoodDetails = () => {
       }}
       className="px-20 py-14"
     >
-      <div className="grid grid-cols-2 mx-auto">
+      <div className="grid lg:grid-cols-2 mx-auto">
         <div className="px-10 flex flex-col justify-center gap-2">
           <h2 className="text-3xl font-semibold ">{name}</h2>
           <p className="text-justify w-3/4 text-sm">

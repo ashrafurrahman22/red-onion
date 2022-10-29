@@ -31,7 +31,7 @@ const Food = () => {
                 <button onClick={()=>handleClick("dinner")} className={`${btn==="dinner" ? "border-b-2 border-red-500" : "border-none"}`}>Dinner</button>
             </div>
 
-            <div className='grid grid-cols-3 px-14 gap-10 py-10'>
+            <div className='grid lg:grid-cols-3 px-14 gap-10 py-10'>
                 {btn === "breakfast" &&
                     breakfast.map(food => <SingleFood
                     key={food._id}

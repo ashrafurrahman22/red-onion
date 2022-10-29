@@ -29,7 +29,7 @@ const Cart = () => {
       };
 
     return (
-        <div className='grid grid-cols-3'>
+        <div className='grid lg:grid-cols-3'>
             <div className='card card-body w-96 mx-auto text-center'>
             <h2 className='text-left ml-4 text-xl'>Edit Delivery Details</h2>
             <hr className='bg-black' />

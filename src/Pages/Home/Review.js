@@ -16,7 +16,7 @@ const Review = () => {
             <p className='py-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Commodi libero impedit voluptatibus eius?</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid lg:grid-cols-3 gap-10">
                     {
                         reviews.map(review=>
                             <SingleReview
