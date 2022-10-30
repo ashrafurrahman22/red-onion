@@ -6,22 +6,22 @@ const SingleCartDetails = ({order}) => {
     const {name, img, price} = order;
 
     // delete
-    // const handleDelete = id =>{
-    //   const procede = window.confirm('Are You Sure?');
-    //   if(procede){
-    //     const url = `https://tranquil-gorge-14030.herokuapp.com/carts/${id}`
-    //     fetch(url, {
-    //       method : "DELETE"
-    //     })
-    //     .then(res => {
-    //         res.json()
-    //       toast.success("Successfully deleted")
-    //       })
-    //     .then(data => {
-    //       console.log(data)
-    //     })
-    //   }
-    // }
+    const handleDelete = id =>{
+      const procede = window.confirm('Are You Sure?');
+      if(procede){
+        const url = `https://tranquil-gorge-14030.herokuapp.com/carts/${id}`
+        fetch(url, {
+          method : "DELETE"
+        })
+        .then(res => {
+            res.json()
+          toast.success("Successfully Removed")
+          })
+        .then(data => {
+          console.log(data)
+        })
+      }
+    }
 
     return (
         <div className=''>
@@ -31,9 +31,9 @@ const SingleCartDetails = ({order}) => {
     <h2>{name}</h2>
     <p>Price: ${price}</p>
   </div>
-  {/* <div>
-    <button onClick={()=>handleDelete(order._id)} className='btn'>Delete</button>
-  </div> */}
+  <div>
+    <button onClick={()=>handleDelete(order._id)} className='btn btn-xs'>X</button>
+  </div>
 </div>
         </div>
     );
