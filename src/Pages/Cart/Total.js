@@ -10,7 +10,7 @@ const Total = () => {
       sum += parseFloat(element.price)
     } )
 
-    const tax = sum / 5;
+    const tax = sum / 20;
     const delivery = parseInt(sum / 10);
 
     const totalBill = parseInt(sum + tax + delivery);

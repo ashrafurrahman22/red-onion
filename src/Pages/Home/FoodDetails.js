@@ -70,12 +70,12 @@ const FoodDetails = () => {
       style={{
         fontFamily: "poppins",
       }}
-      className="px-20 py-14"
+      className="lg:px-20 px-4 lg:py-14 py-4"
     >
       {/* <div className="grid lg:grid-cols-2 mx-auto"> */}
-      <div className="flex flex-row-reverse justify-center items-center">
-      <div className="">
-          <img src={img} alt="" />
+      <div className="flex lg:flex-row-reverse flex-col justify-center items-center">
+      <div>
+          <img className="lg:w-full w-44 lg:py-0 py-8" src={img} alt="" />
         </div>
 
         <div className="px-10 flex flex-col justify-center gap-2">
@@ -87,10 +87,10 @@ const FoodDetails = () => {
           </p>
           <div className="flex items-center lg:gap-14 gap-2">
             <p className="text-2xl py-2 font-medium">${price}</p>
-            <div className="border border-slate-600 rounded-full flex justify-center items-center h-10 gap-5 lg:w-28">
-              <button onClick={()=>decrementCount()} className="text-3xl px-2">-</button>
+            <div className="border border-slate-600 rounded-full flex justify-center items-center h-10 gap-5 lg:w-28 w-18">
+              <button onClick={()=>decrementCount()} className="lg:text-3xl px-2">-</button>
               <p>{count}</p>
-              <button onClick={()=>incrementCount()} className="text-3xl px-2">+</button>
+              <button onClick={()=>incrementCount()} className="lg:text-3xl px-2">+</button>
             </div>
           </div>
 
