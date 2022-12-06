@@ -46,7 +46,7 @@ const FoodDetails = () => {
     // console.log(data)
     // setClick(clicked)
 
-    axios.post('https://tranquil-gorge-14030.herokuapp.com/carts', data)
+    axios.post('https://red-onion-server-production.up.railway.app/carts', data)
     .then(response =>{
       const {data} = response;
       console.log(response);
@@ -75,7 +75,7 @@ const FoodDetails = () => {
       {/* <div className="grid lg:grid-cols-2 mx-auto"> */}
       <div className="flex lg:flex-row-reverse flex-col justify-center items-center">
       <div>
-          <img className="lg:w-full w-44 lg:py-0 py-8" src={img} alt="" />
+          <img className="lg:w-2/3 w-44 lg:py-0 py-8" src={img} alt="" />
         </div>
 
         <div className="px-10 flex flex-col justify-center gap-2">

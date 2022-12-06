@@ -4,7 +4,7 @@ const useFoods = () =>{
     const [foods, setFoods] = useState([]);
 
     useEffect( ()=>{
-        fetch('https://tranquil-gorge-14030.herokuapp.com/foods')
+        fetch('https://red-onion-server-production.up.railway.app/foods')
         .then(res => res.json())
         .then(data => setFoods(data))
     } , [foods])

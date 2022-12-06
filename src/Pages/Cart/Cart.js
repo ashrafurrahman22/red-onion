@@ -17,7 +17,7 @@ const Cart = () => {
       const onSubmit = data => {
         console.log(data)
     
-        axios.post('https://tranquil-gorge-14030.herokuapp.com/confirmorders', data)
+        axios.post('https://red-onion-server-production.up.railway.app/confirmorders', data)
         .then(response =>{
           const {data} = response;
           console.log(response);

@@ -9,7 +9,7 @@ const SingleCartDetails = ({order}) => {
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
       if(procede){
-        const url = `https://tranquil-gorge-14030.herokuapp.com/carts/${id}`
+        const url = `https://red-onion-server-production.up.railway.app/carts/${id}`
         fetch(url, {
           method : "DELETE"
         })
