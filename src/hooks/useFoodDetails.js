@@ -4,7 +4,7 @@ const useFoodDetails = foodId =>{
     const [data, setData] = useState({});
 
     useEffect(()=>{
-        const url = `https://red-onion-server-production.up.railway.app/foods/${foodId}`
+        const url = `https://good-tan-cheetah-vest.cyclic.app/foods/${foodId}`
         fetch(url)
         .then(res => res.json())
         .then(result => setData(result))

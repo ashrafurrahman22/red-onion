@@ -9,7 +9,7 @@ const SingleCartDetails = ({order}) => {
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
       if(procede){
-        const url = `https://red-onion-server-production.up.railway.app/carts/${id}`
+        const url = `https://good-tan-cheetah-vest.cyclic.app/carts/${id}`
         fetch(url, {
           method : "DELETE"
         })

@@ -46,7 +46,7 @@ const FoodDetails = () => {
     // console.log(data)
     // setClick(clicked)
 
-    axios.post('https://red-onion-server-production.up.railway.app/carts', data)
+    axios.post('https://good-tan-cheetah-vest.cyclic.app/carts', data)
     .then(response =>{
       const {data} = response;
       console.log(response);

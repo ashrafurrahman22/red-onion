@@ -17,7 +17,7 @@ const Cart = () => {
       const onSubmit = data => {
         console.log(data)
     
-        axios.post('https://red-onion-server-production.up.railway.app/confirmorders', data)
+        axios.post('https://good-tan-cheetah-vest.cyclic.app/confirmorders', data)
         .then(response =>{
           const {data} = response;
           console.log(response);
